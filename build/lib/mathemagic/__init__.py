@@ -212,6 +212,66 @@ def calculate(expression: str):
         return eval(expression)
     except Exception:
         return Exception("EvaluationError: Unable to evaluate the given expression, are you using correct operations?")
+ 
+
+'''
+Automorphic numbers are number whose square end with that particular number like 5 with square 25 ending with digit 5
+'''
+def automorphic(num : int):
+    sq = num **2
+    no = num
+    d = 0
+
+    while no > 0:
+        d = d + 1
+        no //= 10
+
+    rem = sq % 10 ** d
+    if(rem == num):
+        return True
+    else:
+        return False
+
+def reverse(num : int):
+    no = num
+    rev = 0
+
+    while no > 0:
+        rem = no % 10
+        rev = (rev * 10) + rem
+        no //= 10
+    
+    return rev
+  
+'''
+a number that contains 0 in it is duck number
+'''
+  
+def ducknum(num : int):
+    no = num
+    d = 0
+    while no > 0:
+        d = d + 1
+        no //= 10
+    
+    flag = 0
+    i  = 0
+    c = d
+    
+    no = num
+
+    while no > 0:
+        rem = no % 10
+        if rem == 0:
+            flag = 1
+            break
+        no //= 10
+    
+    if flag == 1:
+        return True
+    elif flag == 0:
+        return False
+
 
 
 __version__ = '1.0'
