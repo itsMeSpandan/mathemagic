@@ -244,7 +244,7 @@ def reverse(num : int):
     return rev
   
 '''
-a number that contains 0 in it is duck number
+a number that contains 0 in it is duck number like 201
 '''
   
 def ducknum(num : int):
